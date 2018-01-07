@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          
+          How to resize a SVG image - undefined
         
     </title>
 
-    <link rel="canonical" href="http://ayumi-saito.com/archives/">
+    <link rel="canonical" href="http://ayumi-saito.com/2017/12/16/How-to-resize-a-SVG-image/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,8 +69,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/undefined')
-            /*page*/
+            background-image: url('')
+            /*post*/
         
     }
     
@@ -83,10 +83,16 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>Hexo</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading"></span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>How to resize a SVG image</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Ayumi Saito on
+                            2017-12-16
+                        </span>
                     </div>
                 
 
@@ -165,222 +171,87 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Modify by Yu-Hsuan Yen -->
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 归档列表 -->
-            
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-             <!-- 归档列表 -->
+                <p>Yesterday, I encountered an small issue. The issue was about resizing a SVG image.</p>
+<p>“Resizing an image” sounds easy. But it was not easy it sounds actually. So I suppose it worth writing my finding about resizing SVG in a blog post.</p>
+<h2 id="What-is-SVG"><a href="#What-is-SVG" class="headerlink" title="What is SVG?"></a>What is SVG?</h2><p>SVG stands for “Scalable Vector Graphics”. According to MDN, the definition of SVG is as bellow.</p>
+<p>Scalable Vector Graphics (SVG) is an XML-based markup language for describing two dimensional based vector graphics. SVG is essentially to graphics what HTML is to text.<br>SVG is a text-based open Web standard. It is explicitly designed to work with other web standards such as CSS, DOM, and SMIL.<br>SVG is mostly common used for images and icons to develop applications. If you work with an Web designer, he or she will send you images with SVG format, not JPEG or PNG. So knowing how to deal with SVG is essential for FrontEnd developer.</p>
+<h2 id="How-to-resize-a-SVG-image"><a href="#How-to-resize-a-SVG-image" class="headerlink" title="How to resize a SVG image"></a>How to resize a SVG image</h2><p>There are two ways to resize a SVG image. Let’s take a look it one by one.</p>
+<h3 id="1-Change-width-and-height-in-XML-format"><a href="#1-Change-width-and-height-in-XML-format" class="headerlink" title="1) Change width and height in XML format"></a>1) Change width and height in XML format</h3><p>Open the SVG file with your text editor. It should show lines of code as below.</p>
+<p><svg width="54px" height="54px" viewbox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><br/>As you can see, width and height are defined here. So you just have to change width and height to what you want.</svg></p>
+<p>It’s easy! Right?</p>
+<p>In my case, this solution didn’t work out. I wanted to scale down the size of image but the SVG image that the designer sent to me was not changeable from the file somehow. So I had to look for other ways.</p>
+<h3 id="2-Use-“background-size”"><a href="#2-Use-“background-size”" class="headerlink" title="2) Use “background-size”"></a>2) Use “background-size”</h3><p>Another solution is to use CSS. However, setting <code>width</code> and <code>height</code> don’t change the situation.</p>
+<p>Instead, you have to use background-size. This property specifies the size of image.</p>
+<p>For instance, you can write like this.</p>
+<p><code>i { background-size: 20px 30px; }</code></p>
+<p>First value (20px) specify the height of image. Second value(30px) specify the width of image.</p>
+<p>Whenever you make an website or application, most likely you will have to use SVG image anyway. Whenever you need to resize them, please try the above two ways!</p>
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
-                    <span class="tag-text">2017</span>
-                </span>
-                <ul>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    12-16
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/12/16/How-to-resize-a-SVG-image/" style="color: #0085a1">
-                        <span>
-                            How to resize a SVG image
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    11-19
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/11/19/My-experience-at-GOTO-Berlin-and-2-takeaways-in-participating-in-tech-conference/" style="color: #0085a1">
-                        <span>
-                            My experience at GOTO Berlin and 2 takeaways in participating in tech conference
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    09-03
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/09/03/How-to-get-a-developer-job-abroad-as-a-non-native-English-speaker/" style="color: #0085a1">
-                        <span>
-                            How to get a developer job abroad as a non-native English speaker
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    08-26
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/08/26/4-Things-you-should-prepare-before-working-as-a-Junior-FrontEnd-developer-Intern/" style="color: #0085a1">
-                        <span>
-                            4 Things you should prepare before working as a Junior FrontEnd developer / Intern
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    06-30
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/06/30/Feedback-and-Resources-that-I-got-through-my-technical-interviews/" style="color: #0085a1">
-                        <span>
-                            Feedback and Resources that I got through my technical interviews
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    06-11
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/06/11/My-100-Apps-challenge-Why-and-How/" style="color: #0085a1">
-                        <span>
-                            My 100 Apps challenge (Why and How?)
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/11/19/My-experience-at-GOTO-Berlin-and-2-takeaways-in-participating-in-tech-conference/" data-toggle="tooltip" data-placement="top" title="My experience at GOTO Berlin and 2 takeaways in participating in tech conference">Next Post &rarr;</a>
+                        </li>
+                    
                 </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
             </div>
             
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
 
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
         </div>
     </div>
-</div>
+</article>
 
-                <!-- 如果开启评论功能 -->
-                
-            </div>
 
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
 
-        
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            
-            
 
-            
-
-            
-
-            
-            
-            
-            
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        
-  <h5>RECENT POSTS</h3>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2017/12/16/How-to-resize-a-SVG-image/">How to resize a SVG image</a>
-        </li>
-      
-        <li>
-          <a href="/2017/11/19/My-experience-at-GOTO-Berlin-and-2-takeaways-in-participating-in-tech-conference/">My experience at GOTO Berlin and 2 takeaways in participating in tech conference</a>
-        </li>
-      
-        <li>
-          <a href="/2017/09/03/How-to-get-a-developer-job-abroad-as-a-non-native-English-speaker/">How to get a developer job abroad as a non-native English speaker</a>
-        </li>
-      
-        <li>
-          <a href="/2017/08/26/4-Things-you-should-prepare-before-working-as-a-Junior-FrontEnd-developer-Intern/">4 Things you should prepare before working as a Junior FrontEnd developer / Intern</a>
-        </li>
-      
-        <li>
-          <a href="/2017/06/30/Feedback-and-Resources-that-I-got-through-my-technical-interviews/">Feedback and Resources that I got through my technical interviews</a>
-        </li>
-      
-    </ul>
-  </div>
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
 
 
     <!-- Footer -->
